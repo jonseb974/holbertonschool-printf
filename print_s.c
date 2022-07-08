@@ -16,7 +16,7 @@ int print_s(va_list la_list)
 		return (-1);
 	for (i = 0; s[i]; i++)
 		count++;
-	_putchar(s[i]);
+	putchar(s[i]);
 
 	return (count);
 }
