@@ -8,7 +8,7 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-void putchar(char c)
+void _putchar(char c)
 {
 	write(1, &c, 1);
 }

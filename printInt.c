@@ -7,7 +7,7 @@
 #include "main.h"
 #include <string.h>
 #include <stdio.h>
-#include <ctype.h>
+#include <stdlib.h>
 
 char* itoa(int n, int plus)
 {
@@ -62,7 +62,6 @@ int printInt (int n, char *option)
 {
 	int i = 0;
 	int strlen = 0;
-	int testn = 1;
 	char flag0min = 0;
 	int flagplus = 0;
 	char *res;
@@ -72,11 +71,11 @@ int printInt (int n, char *option)
 			if (option[i] == '+')
 				flagplus = 1;
 			else if (option[i] == ' ')
-				flagsplus = 2;
+				flagplus = 2;
 			else if (option[i] == '-')
-				flags0min = '-';
+				flag0min = '-';
 			else if (option[i] == '0')
-				flags0min = '0';
+				flag0min = '0';
 			else
 				break;
 			i++;
@@ -87,7 +86,7 @@ int printInt (int n, char *option)
 		i--;
 		option[i] = flag0min;
 	}
-	strlen = printString(res, option[i]);
+	strlen = printString(res, option + i);
 	free(res);
 	return strlen;
 }
