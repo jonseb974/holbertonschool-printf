@@ -3,7 +3,7 @@
 /**
  * print_s - print string
  * @la_list: Store the list of characters
- * Return: num of parameters printed
+ * Return: numb of parameters printed
  */
 
 int print_s(va_list la_list)
