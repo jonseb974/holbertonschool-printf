@@ -1,5 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -60,10 +61,13 @@ int _printf(const char *format, ...)
 {
 	int i, j;
 	int count = 0;
-	char *option = malloc(200);
+	char *option = malloc(20);
 	va_list ap;
 	
 	va_start(ap, format);
+	if (option == NULL)
+    	return (1);
+	memcpy (option, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20);
 	for (i = 0; format[i] != 0; i++, count++)
 	{
 		option[0] = '\0';
@@ -105,5 +109,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 	}
 	va_end(ap);
+	free(option);
 	return (count);
 }

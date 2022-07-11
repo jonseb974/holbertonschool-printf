@@ -17,6 +17,9 @@ char* itoa(int n, int plus)
 	int p = 1;
 	int incr = 0;
 
+	if (result == NULL)
+    	exit (1);
+	memcpy (result, "\0\0\0\0\0\0\0\0\0\0", 10);
 	if (n < 0)
 	{
 		result[p - 1] = '-';
@@ -66,7 +69,7 @@ int printInt (int n, char *option)
 	char *res;
 
 	while (option[i])
-		{
+		{	
 			if (option[i] == '+')
 				flagplus = 1;
 			else if (option[i] == ' ')
