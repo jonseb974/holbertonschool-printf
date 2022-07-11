@@ -5,44 +5,52 @@
 .TH _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manuel" 
 
 .SH NAME
+
 _printf function \- formated output conversion.
 
 .SH SYNOPSIS
 
-#ifndef HEADER\
-#define HEADER\
+#ifndef HEADER
 
-char* itoa(int n, int plus);\
+#define HEADER
 
-int printInt (int, char *);\
+char* itoa(int n, int plus);
 
-int printString(char *, char *);\
+int printInt (int, char *);
 
-int _printf(const char *format, ...);\
+int printString(char *, char *);
 
-char checkOptions(char type, char *option);\
+int _printf(const char *format, ...);
 
-void _putchar(char);\
+char checkOptions(char type, char *option);
 
-.B _printf\
-This is the C18 Laval 2022 _PRINTF version.
+void _putchar(char);
 
-.SH Description of _printf\
+.B This is the #C18 Laval 2022-23, _PRINTF version.
 
-_printf()is a functions similar to the regular function printf(),\
-and it takes 2 input arguments.\
-According to the case when the program encounter the '%' symbol,\
-the program is returning a specific output FORMAT.
+.SH Description of _printf
+
+_printf() is a functions similar to the regular function printf(),
+and it takes 2 inputs arguments.
+
+According to the case, when the program encounter the '%' symbol,
+a specific output FORMAT is returned.
+
 .PP
 .B %s print an array of characters.
+
 .PP
-.B %c return the ASCII character corresponding to/
-the specific character, the function is calling./
+.B %c return the ASCII character corresponding to
+
+the specific target, the function is calling.
+
 .PP
-.B %i return an integer number of the ASCII table,/
-character corresponding to a string handle conversion type.
+.B %i return an integer number of the ASCII table,
+
+this character correspond to a string handle conversion type.
+
 .PP
-.B %d return decimal number of the ASCII table,/
+.B %d return decimal number of the ASCII table,
 corresponding to a string handle conversion type.
 
 .SH OPTIONS 
@@ -56,10 +64,70 @@ corresponding to a string handle conversion type.
 
 .SH EXEMPLES
 
+.B %c conversion example:
+
+_printf("Character:[%c]\n", 'H');
+
+printf("Character:[%c]\n", 'H');
+
+return:
+
+Character:[H]
+
+Character:[H]
+
+
+.B %s conversion example:
+
+_printf("String:[%s]\n", "I am a string !");
+
+printf("String:[%s]\n", "I am a string !");
+
+return:
+
+String:[I am a string !]
+
+String:[I am a string !]
+
+
+.B %i & %d conversion example:
+
+_printf("Length:[%d, %i]\n", len, len);
+
+printf("Length:[%d, %i]\n", len2, len2);
+
+return:
+
+Length:[39, 39]
+
+Length:[39, 39]
+
+
+.B error message example:
+
+_printf("Unknown:[%r]\n");
+
+printf("Unknown:[%r]\n");
+
+return:
+
+Unknown:[%r]
+
+Unknown:[%r]
+
+
 
 .SH "SEE ALSO"
+ .B prinft (3) -- Linux manual page
+
+ https://man7.org/linux/man-pages/man3/printf.3.html
+
 .SH ""
+
+
 .SH "AUTHOR"
+
+
 .SH ""
 
 
