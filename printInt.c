@@ -62,7 +62,6 @@ int printInt (int n, char *option)
 {
 	int i = 0;
 	int strlen = 0;
-	char flag0min = 0;
 	int flagplus = 0;
 	char *res;
 
@@ -72,21 +71,14 @@ int printInt (int n, char *option)
 				flagplus = 1;
 			else if (option[i] == ' ')
 				flagplus = 2;
-			else if (option[i] == '-')
-				flag0min = '-';
-			else if (option[i] == '0')
-				flag0min = '0';
+			else if (option[i] == '-' || option[i] == '0')
+				;
 			else
 				break;
 			i++;
 		}
-        res = itoa(n, flagplus);
-	if (flag0min)
-	{
-		i--;
-		option[i] = flag0min;
-	}
-	strlen = printString(res, option + i);
+    res = itoa(n, flagplus);
+	strlen = printString(res, option);
 	free(res);
 	return strlen;
 }

@@ -43,8 +43,9 @@ char checkOptions(char type, char *option)
 	}
 	while (option[i])
 	{
-		if (option[i] < 0 || option[i] > 9)
+		if (option[i] < '0' || option[i] > '9')
 			return (0);
+		i++;
 	}
 	return (type);
 }
@@ -61,27 +62,27 @@ int _printf(const char *format, ...)
 	int count = 0;
 	char *option = malloc(200);
 	va_list ap;
-
+	
 	va_start(ap, format);
 	for (i = 0; format[i] != 0; i++, count++)
 	{
-		option = "";
+		option[0] = '\0';
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i + 1] == '%')
+			if (format[i] == '%')
 				_putchar('%');
-			else if (format[i + 1] == '%')
+			else if (format[i] == 'c')
 				_putchar(va_arg(ap, int));
 			else
 			{
-				j = 1;
+				j = 0;
 				while ((format[i + j] >= ' ' && format[i + j] <= '9'))
 				{
-					option[j - 1] = format[i + j];
+					option[j] = format[i + j];
 					j++;
 				}
-				option[j - 1] = '\0';
+				option[j] = '\0';
 				if (checkOptions(format[i + j], option) == 'd' ||
 				    checkOptions(format[i + j], option) == 'i')
 				{

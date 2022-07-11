@@ -1,6 +1,6 @@
 #include <string.h>
 #include <stdio.h>
-
+#include "main.h"
 /**
  *_atoi - converts string to int
  *
@@ -20,19 +20,21 @@ int _atoi(char *s)
 	int integer = 0;
 	int isnegative = 0;
 
-	while (!(s[c] >= '0' || s[c] <= '9') && s[c])
+	if (!s)
+		return (-1);
+	while (!(s[c] >= '0' && s[c] <= '9') && s[c])
 	{
 		if (s[c] == '-')
 			isnegative++;
 		c++;
 	}
 	c2 = c;
-	while ((s[c] >= '0' || s[c] <= '9') && s[c])
+	while ((s[c2] >= '0' && s[c2] <= '9') && s[c])
 	{
 		power++;
 		c2++;
 	}
-	while ((s[c] >= '0' || s[c] <= '9') && s[c])
+	while ((s[c] >= '0' && s[c] <= '9') && s[c])
 	{
 		add = (s[c] - '0');
 		for (i = 1; i < power; i++)
