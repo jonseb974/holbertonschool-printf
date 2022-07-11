@@ -67,7 +67,7 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	if (option == NULL)
     	return (1);
-	memcpy (option, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20);
+	memcpy (option, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20);/* printf("%dhello%%%-15s\n", 25,"0")*/
 	for (i = 0; format[i] != 0; i++, count++)
 	{
 		option[0] = '\0';

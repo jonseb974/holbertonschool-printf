@@ -1,0 +1,68 @@
+ ss this page with 
+.\" groff -man -tascii
+.\"
+
+.TH _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manuel" 
+
+.SH NAME
+_printf function \- formated output conversion.
+
+.SH SYNOPSIS
+
+#ifndef HEADER\
+#define HEADER\
+
+char* itoa(int n, int plus);\
+
+int printInt (int, char *);\
+
+int printString(char *, char *);\
+
+int _printf(const char *format, ...);\
+
+char checkOptions(char type, char *option);\
+
+void _putchar(char);\
+
+.B _printf\
+This is the C18 Laval 2022 _PRINTF version.
+
+.SH Description of _printf\
+
+_printf()is a functions similar to the regular function printf(),\
+and it takes 2 input arguments.\
+According to the case when the program encounter the '%' symbol,\
+the program is returning a specific output FORMAT.
+.PP
+.B %s print an array of characters.
+.PP
+.B %c return the ASCII character corresponding to/
+the specific character, the function is calling./
+.PP
+.B %i return an integer number of the ASCII table,/
+character corresponding to a string handle conversion type.
+.PP
+.B %d return decimal number of the ASCII table,/
+corresponding to a string handle conversion type.
+
+.SH OPTIONS 
+
+
+.SH FILES
+.TP 
+
+.SH BUGS
+
+
+.SH EXEMPLES
+
+
+.SH "SEE ALSO"
+.SH ""
+.SH "AUTHOR"
+.SH ""
+
+
+
+Murdo Nickolai and Sebastien Jonad
+

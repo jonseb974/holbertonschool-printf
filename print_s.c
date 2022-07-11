@@ -4,7 +4,7 @@
 /**
 *printNcar - prints a character n times
 *
-*@car: character to rpint
+*@car: character to print
 *@n: amount of times
 *Return: amount of characters printed
 */
