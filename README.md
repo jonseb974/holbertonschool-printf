@@ -13,21 +13,23 @@ _printf function - formated output conversion.
 #define HEADER
 
 char* itoa(int n, int plus);
+
 int printInt (int, char *);
+
 int printString(char *, char *);
+
 int _printf(const char *format, ...);
+
 char checkOptions(char type, char *option);
+
 void _putchar(char);
-.B _printf
 
 This is the C18 Laval 2022 _PRINTF version.
 
 ## Description of _printf 
 
-    _printf()is a functions similar to the regular function printf(),
-and it takes 2 input arguments.
-According to the case, when the program encounter the '%' symbol,
-the program will return a specific output FORMAT.
+    _printf()is a functions similar to the regular function printf(),and it takes 2 input arguments.
+    According to the case, when the program encounter the '%' symbol,the program will return a specific output FORMAT.
 
 
  %s print an array of characters.
