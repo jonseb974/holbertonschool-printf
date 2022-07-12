@@ -2,7 +2,7 @@
 .\" groff -man -tascii
 .\"
 
-# _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manuel" 
+## _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manuel" 
 
 ## NAME
 _printf function - formated output conversion.
@@ -22,26 +22,23 @@ void _putchar(char);
 
 This is the C18 Laval 2022 _PRINTF version.
 
-##/* Description of _printf */
+## Description of _printf 
 
-    _printf()is a functions similar to the regular function printf(),\
+    _printf()is a functions similar to the regular function printf(),
 and it takes 2 input arguments.
-According to the case, when the program encounter the '%' symbol,\
+According to the case, when the program encounter the '%' symbol,
 the program will return a specific output FORMAT.
 
 
-# %s print an array of characters./
+ %s print an array of characters.
 
+ %c return the ASCII character corresponding to
+the specific character, the function is calling.
 
-## %c return the ASCII character corresponding to/
-the specific character, the function is calling./
-
-
-## %i return an integer number of the ASCII table,/
+ %i return an integer number of the ASCII table,
 character corresponding to a string handle conversion type.
 
-
-## %d return decimal number of the ASCII table,/
+ %d return decimal number of the ASCII table,
 corresponding to a string handle conversion type.
 
 # OPTIONS 
@@ -66,10 +63,10 @@ You don’t have to handle field width
 You don’t have to handle precision
 You don’t have to handle the length modifiers
 
-.SH "SEE ALSO"
-.SH "printf (3) [linux man page]"
+"SEE ALSO"
+"printf (3) [linux man page]"
 (https://man7.org/linux/man-pages/man3/printf.3.html)
 
-.SH "AUTHOR"
+"AUTHOR"
 Murdo Nicolai and Sébastien Jonad
 
