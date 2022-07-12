@@ -53,14 +53,6 @@ this character correspond to a string handle conversion type.
 .B %d return decimal number of the ASCII table,
 corresponding to a string handle conversion type.
 
-.SH OPTIONS 
-
-
-.SH FILES
-.TP 
-
-.SH BUGS
-
 
 .SH EXEMPLES
 
