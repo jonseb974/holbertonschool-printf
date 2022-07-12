@@ -2,12 +2,12 @@
 .\" groff -man -tascii
 .\"
 
-.TH _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manuel" 
+# _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manuel" 
 
-.SH NAME
+## NAME
 _printf function - formated output conversion.
 
-.SH SYNOPSIS
+## SYNOPSIS
 
 #ifndef HEADER
 #define HEADER
@@ -22,29 +22,29 @@ void _putchar(char);
 
 This is the C18 Laval 2022 _PRINTF version.
 
-.SH /* Description of _printf */
+##/* Description of _printf */
 
     _printf()is a functions similar to the regular function printf(),\
 and it takes 2 input arguments.
 According to the case, when the program encounter the '%' symbol,\
 the program will return a specific output FORMAT.
 
-.PP
-.B %s print an array of characters./
 
-.PP
-.B %c return the ASCII character corresponding to/
+# %s print an array of characters./
+
+
+## %c return the ASCII character corresponding to/
 the specific character, the function is calling./
 
-.PP
-.B %i return an integer number of the ASCII table,/
+
+## %i return an integer number of the ASCII table,/
 character corresponding to a string handle conversion type.
 
-.PP
-.B %d return decimal number of the ASCII table,/
+
+## %d return decimal number of the ASCII table,/
 corresponding to a string handle conversion type.
 
-.SH OPTIONS 
+# OPTIONS 
 The _printf program will replicate the effects of the listed % format specifiers as when used with printf.
 
     Function name   Description Format Specifier
@@ -60,15 +60,15 @@ The _printf program will replicate the effects of the listed % format specifiers
     _print_hex_l    Prints the lower case hexidecimal number    x
     _print_hex_u    Prints the upper case hexidecimal number    X
 
-.SH BUGS
+# BUGS
 You don’t have to handle the flag characters
 You don’t have to handle field width
 You don’t have to handle precision
 You don’t have to handle the length modifiers
 
 .SH "SEE ALSO"
-.SH "printf (3) linux man page"
-https://man7.org/linux/man-pages/man3/printf.3.html
+.SH "printf (3) [linux man page]"
+(https://man7.org/linux/man-pages/man3/printf.3.html)
 
 .SH "AUTHOR"
 Murdo Nicolai and Sébastien Jonad
