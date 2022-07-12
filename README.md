@@ -2,7 +2,7 @@
 .\" groff -man -tascii
 .\"
 
-## _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manuel" 
+## _PRINTF Manpage (3) "12 July 2022" __"Holberton School__ #C18 Laval. 
 
 ## NAME
 _printf function - formated output conversion.
@@ -73,6 +73,6 @@ You don’t have to handle the length modifiers
 
 (https://man7.org/linux/man-pages/man3/printf.3.html)
 
-"AUTHOR"
+"AUTHORS"
 Murdo Nicolai and Sébastien Jonad
 
