@@ -63,6 +63,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 	char *option = malloc(20);
 	va_list ap;
+	char *word;
 	
 	va_start(ap, format);
 	if (option == NULL)
@@ -96,19 +97,25 @@ int _printf(const char *format, ...)
 				else if (checkOptions(format[i + j], option) == 's')
 				{
 					i += j;
-					count += printString(va_arg(ap, char *), option) - 1;
+					word = (va_arg(ap, char *));
+					if (word != NULL)
+					{
+						count += printString(va_arg(ap, char *), option) - 1;
+					}
+					else
+					{
+						_putchar('%');
+						i--;
+					}
 				}
-				else
-				{
-					_putchar('%');
-					i--;
 				}
 			}
+			else 
+			{
+				_putchar(format[i]);
+			}
 		}
-		else
-			_putchar(format[i]);
+		va_end(ap);
+		free(option);
+		return (count);
 	}
-	va_end(ap);
-	free(option);
-	return (count);
-}
