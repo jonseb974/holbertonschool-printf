@@ -2,7 +2,7 @@
 .\" groff -man -tascii
 .\"
 
-.TH _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manual" 
+.TH _PRINTF Manpage 3 "12 July 2022" "Holberton School | #C18__Laval | _printf Manual" 
 
 .SH NAME
 
@@ -132,5 +132,5 @@ Unknown:[%r]
 
 
 
-Murdo Nickolai and Sebastien Jonad
+Murdo Nicolai and Sebastien Jonad
 
