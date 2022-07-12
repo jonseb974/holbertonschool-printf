@@ -2,7 +2,7 @@
 .\" groff -man -tascii
 .\"
 
-.TH _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manuql" 
+.TH _PRINTF Manpage 3 "12 July 2022" "Holberton School #C18 Laval _printf Manual" 
 
 .SH NAME
 
