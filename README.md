@@ -61,12 +61,16 @@ The _printf program will replicate the effects of the listed % format specifiers
 
 # BUGS
 You don’t have to handle the flag characters
+
 You don’t have to handle field width
+
 You don’t have to handle precision
+
 You don’t have to handle the length modifiers
 
 "SEE ALSO"
 "printf (3) [linux man page]"
+
 (https://man7.org/linux/man-pages/man3/printf.3.html)
 
 "AUTHOR"
