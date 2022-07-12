@@ -1,8 +1,5 @@
- ss this page with 
-.\" groff -man -tascii
-.\"
 
-## _PRINTF Manpage (3) "12 July 2022" __"Holberton School__ #C18 Laval. 
+# _PRINTF Manpage (3) "12 July 2022" __"Holberton School__ #C18 Laval. 
 
 ## NAME
 _printf function - formated output conversion.
