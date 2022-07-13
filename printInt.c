@@ -37,10 +37,10 @@ char *itoa(int n, int plus)
 		result[p - 1] = ' ';
 	else
 		p--;
-	while (i > n && n > 0)
+	while (i > n && i > 1)
 		i /= 10;
 
-	while (i > 9 && n > 0)
+	while (i > 9)
 	{
 		car = ((n - (n % i)) / i) + 48;
 		n =  n % i;
