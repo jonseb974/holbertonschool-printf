@@ -56,15 +56,7 @@ The _printf program will replicate the effects of the listed % format specifiers
     _print_hex_l    Prints the lower case hexidecimal number    x
     _print_hex_u    Prints the upper case hexidecimal number    X
 
-# BUGS
-You don’t have to handle the flag characters
-
-You don’t have to handle field width
-
-You don’t have to handle precision
-
-You don’t have to handle the length modifiers
-
+#
 "SEE ALSO"
 "printf (3) [linux man page]"
 
