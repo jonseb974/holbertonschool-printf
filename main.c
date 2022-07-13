@@ -14,8 +14,8 @@ int main(void)
     unsigned int ui;
     void *addr;
 
-    len = _printf(NULL);
-	len2 = printf(NULL);
+    len = _printf("%d", 10000);
+	len2 = printf("%d", 10000);
 	fflush(stdout);
 	if (len != len2)
 	{

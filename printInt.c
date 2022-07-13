@@ -40,7 +40,7 @@ char *itoa(int n, int plus)
 	while (i > n && n > 0)
 		i /= 10;
 
-	while (n > 9)
+	while (i > 9)
 	{
 		car = ((n - (n % i)) / i) + 48;
 		n =  n % i;
