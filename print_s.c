@@ -46,7 +46,9 @@ int printString(char *s, char *flag)
 {
 	int i = 0, count = 0, j = 0;
 	char f = 0;
-
+	
+	if (s == NULL)
+		s = "(null)";
 	while (flag[i])
 		{
 			if (flag[i] == '+' || flag[i] == ' ')
@@ -63,9 +65,6 @@ int printString(char *s, char *flag)
 		count += printNcar('0',_atoi(flag + i) - _strlen(s));
 	else if (f != '-')
 		count += printNcar(' ',_atoi(flag + i) - _strlen(s));
-		
-	if (s == NULL)
-		return (-1);
 	for (j = 0; s[j]; j++)
 	{
 		count++;

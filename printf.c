@@ -63,10 +63,9 @@ int _printf(const char *format, ...)
 	int count = 0;
 	char *option = malloc(20);
 	va_list ap;
-	char *word;
 	
 	va_start(ap, format);
-	if (option == NULL)
+	if (option == NULL || format == NULL)
     	return (1);
 	memcpy (option, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20);/* printf("%dhello%%%-15s\n", 25,"0")*/
 	for (i = 0; format[i] != 0; i++, count++)
@@ -97,19 +96,15 @@ int _printf(const char *format, ...)
 				else if (checkOptions(format[i + j], option) == 's')
 				{
 					i += j;
-					word = (va_arg(ap, char *));
-					if (word != NULL)
-					{
-						count += printString(va_arg(ap, char *), option) - 1;
-					}
-					else
-					{
-						_putchar('%');
-						i--;
-					}
+					count += printString(va_arg(ap, char *), option) - 1;
 				}
-				}
+				else
+				{
+					_putchar('%');
+					i--;
+				}								
 			}
+		}
 			else 
 			{
 				_putchar(format[i]);
