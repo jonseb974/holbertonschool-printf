@@ -14,8 +14,16 @@ int main(void)
     unsigned int ui;
     void *addr;
 
-    _printf(NULL);
-    _printf("%s\n", (char*) 0);
+    len = _printf(NULL);
+	len2 = printf(NULL);
+	fflush(stdout);
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
+	return (0);
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;

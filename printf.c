@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 	
 	va_start(ap, format);
 	if (option == NULL || format == NULL)
-    	return (1);
+    	return (-1);
 	memcpy (option, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20);/* printf("%dhello%%%-15s\n", 25,"0")*/
 	for (i = 0; format[i] != 0; i++, count++)
 	{
@@ -98,10 +98,12 @@ int _printf(const char *format, ...)
 					i += j;
 					count += printString(va_arg(ap, char *), option) - 1;
 				}
-				else
+				else 
 				{
-					_putchar('%');
+					if (!format[i])
+						return (-1);
 					i--;
+					_putchar('%');
 				}								
 			}
 		}
