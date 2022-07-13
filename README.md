@@ -1,5 +1,5 @@
 
-# _PRINTF Manpage (3) "12 July 2022" __"Holberton School__ #C18 Laval. 
+# _PRINTF Manpage (3) "12 July 2022" __"Holberton School__ #C18 Laval.
 
 ## NAME
 _printf function - formated output conversion.
@@ -23,7 +23,7 @@ void _putchar(char);
 
 This is the C18 Laval 2022 _PRINTF version.
 
-## Description of _printf 
+## Description of _printf
 
     _printf()is a functions similar to the regular function printf(),and it takes 2 input arguments.
     According to the case, when the program encounter the '%' symbol,the program will return a specific output FORMAT.
@@ -40,7 +40,7 @@ character corresponding to a string handle conversion type.
  %d return decimal number of the ASCII table,
 corresponding to a string handle conversion type.
 
-# OPTIONS 
+# OPTIONS
 The _printf program will replicate the effects of the listed % format specifiers as when used with printf.
 
     Function name   Description Format Specifier

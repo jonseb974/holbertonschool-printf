@@ -1,8 +1,8 @@
- ss this page with 
+ss this page with
 .\" groff -man -tascii
 .\"
 
-.TH _PRINTF Manpage 3 "12 July 2022" "Holberton School | #C18__Laval | _printf Manual" 
+.TH _PRINTF Manpage 3 "12 July 2022" "Holberton School | #C18__Laval | _printf Manual"
 
 .SH NAME
 

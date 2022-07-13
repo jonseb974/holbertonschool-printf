@@ -8,10 +8,11 @@
 *@n: amount of times
 *Return: amount of characters printed
 */
-int printNcar (char car, int n)
+int printNcar(char car, int n)
 {
 	int count = 0;
-	for(;n > 0; n--)
+
+	for ( ; n > 0; n--)
 	{
 		_putchar(car);
 		count++;
@@ -29,16 +30,16 @@ int _strlen(char *s)
 	int i;
 	int count = 0;
 
-	for (i = 0; s[i]; i ++)
+	for (i = 0; s[i]; i++)
 		count++;
-	return count; 
+	return (count);
 }
 
 /**
  * printString - prints string
  *
  *@s: list to print
- *@flag: flags 
+ *@flag: flags
  * Return: numbers of parameters printed
  */
 
@@ -46,25 +47,25 @@ int printString(char *s, char *flag)
 {
 	int i = 0, count = 0, j = 0;
 	char f = 0;
-	
+
 	if (s == NULL)
 		s = "(null)";
 	while (flag[i])
-		{
-			if (flag[i] == '+' || flag[i] == ' ')
-				;
-			else if (flag[i] == '-')
-				f = '-';
-			else if (flag[i] == '0')
-				f = '0';
-			else
-				break;
-			i++;
-		}
+	{
+		if (flag[i] == '+' || flag[i] == ' ')
+			;
+		else if (flag[i] == '-')
+			f = '-';
+		else if (flag[i] == '0')
+			f = '0';
+		else
+			break;
+		i++;
+	}
 	if	(f == '0')
-		count += printNcar('0',_atoi(flag + i) - _strlen(s));
+		count += printNcar('0', _atoi(flag + i) - _strlen(s));
 	else if (f != '-')
-		count += printNcar(' ',_atoi(flag + i) - _strlen(s));
+		count += printNcar(' ', _atoi(flag + i) - _strlen(s));
 	for (j = 0; s[j]; j++)
 	{
 		count++;
@@ -72,6 +73,6 @@ int printString(char *s, char *flag)
 	}
 
 	if	(f == '-')
-		count += printNcar(' ',_atoi(flag + i) - _strlen(s));
+		count += printNcar(' ', _atoi(flag + i) - _strlen(s));
 	return (count);
 }

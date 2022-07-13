@@ -70,7 +70,7 @@ int printInt(int n, char *option)
 	char *res;
 
 	while (option[i])
-	{	
+	{
 		if (option[i] == '+')
 			flagplus = 1;
 		else if (option[i] == ' ')
@@ -81,8 +81,8 @@ int printInt(int n, char *option)
 			break;
 		i++;
 	}
-    res = itoa(n, flagplus);
+	res = itoa(n, flagplus);
 	strlen = printString(res, option);
 	free(res);
-	return strlen;
+	return (strlen);
 }

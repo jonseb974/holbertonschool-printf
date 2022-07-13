@@ -20,6 +20,7 @@ char checkOptions(char type, char *option)
 	switch (type)
 	{
 	case 'i': case 'd':
+		type = 'i';
 		while (option[i])
 		{
 			if (option[i] == '+' && !flags[0] && !flags[3])
@@ -66,46 +67,35 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	if (option == NULL || format == NULL)
 		return (-1);
-	memcpy(option, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20);
 	for (i = 0; format[i] != 0; i++, count++)
 	{
-		option[0] = '\0';
+		memcpy(option, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20);
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '%')
-				_putchar('%');
+			if (!format[i])
+				return (-1);
 			else if (format[i] == 'c')
 				_putchar(va_arg(ap, int));
 			else
 			{
-				for (j = 0; (format[i + j] >= ' ' && format[i + j] <= '9'); j++)
-					option[j] = format[i + j];
-				option[j] = '\0';
-				if (checkOptions(format[i + j], option) == 'd' ||
-				    checkOptions(format[i + j], option) == 'i')
-				{
-					i += j;
+				for (j = 0; (format[i] >= ' ' && format[i] <= '9'); j++, i++)
+					option[j] = format[i];
+				if (checkOptions(format[i + j], option) == 'i')
 					count += printInt(va_arg(ap, int), option) - 1;
-				}
 				else if (checkOptions(format[i + j], option) == 's')
-				{
-					i += j;
 					count += printString(va_arg(ap, char *), option) - 1;
-				}
 				else
 				{
-					if (!format[i])
-						return (-1);
-					i--;
+					i = i - j - (format[i - j] != '%');
 					_putchar('%');
-				}								
+				}
 			}
 		}
-			else
-				_putchar(format[i]);
-		}
-		va_end(ap);
-		free(option);
-		return (count);
+		else
+			_putchar(format[i]);
 	}
+	va_end(ap);
+	free(option);
+	return (count);
+}
