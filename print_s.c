@@ -35,7 +35,7 @@ int _strlen(char *s)
 }
 
 /**
- * print_s - print string
+ * printString - prints string
  *
  *@s: list to print
  *@flag: flags 

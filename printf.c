@@ -59,15 +59,14 @@ char checkOptions(char type, char *option)
 
 int _printf(const char *format, ...)
 {
-	int i, j;
-	int count = 0;
+	int i, j, count = 0;
 	char *option = malloc(20);
 	va_list ap;
-	
+
 	va_start(ap, format);
 	if (option == NULL || format == NULL)
-    	return (-1);
-	memcpy (option, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20);/* printf("%dhello%%%-15s\n", 25,"0")*/
+		return (-1);
+	memcpy(option, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20);
 	for (i = 0; format[i] != 0; i++, count++)
 	{
 		option[0] = '\0';
@@ -80,12 +79,8 @@ int _printf(const char *format, ...)
 				_putchar(va_arg(ap, int));
 			else
 			{
-				j = 0;
-				while ((format[i + j] >= ' ' && format[i + j] <= '9'))
-				{
+				for (j = 0; (format[i + j] >= ' ' && format[i + j] <= '9'); j++)
 					option[j] = format[i + j];
-					j++;
-				}
 				option[j] = '\0';
 				if (checkOptions(format[i + j], option) == 'd' ||
 				    checkOptions(format[i + j], option) == 'i')
@@ -98,7 +93,7 @@ int _printf(const char *format, ...)
 					i += j;
 					count += printString(va_arg(ap, char *), option) - 1;
 				}
-				else 
+				else
 				{
 					if (!format[i])
 						return (-1);
@@ -107,10 +102,8 @@ int _printf(const char *format, ...)
 				}								
 			}
 		}
-			else 
-			{
+			else
 				_putchar(format[i]);
-			}
 		}
 		va_end(ap);
 		free(option);
