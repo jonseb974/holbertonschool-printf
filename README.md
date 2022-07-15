@@ -22,6 +22,8 @@ char checkOptions(char type, char *option);
 void _putchar(char);
 
 This is the C18 Laval 2022 _PRINTF version.
+This repository holds all the code necessary for our custom _printf function to run. 
+Our mini-version currently handles conversion specifiers: c, s, %, d, i
 
 ## Description of _printf
 
@@ -40,6 +42,16 @@ character corresponding to a string handle conversion type.
  %d return decimal number of the ASCII table,
 corresponding to a string handle conversion type.
 
+# Requirements:
+    
+Compile command: gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+   
+    A test folder containing all tests files including main functions
+    Use Structures and Function pointers
+    Header file should be include guarded
+    Prototypes should be included in header file
+    Not more than 5 functions per file
+
 # OPTIONS
 The _printf program will replicate the effects of the listed % format specifiers as when used with printf.
 
@@ -55,6 +67,52 @@ The _printf program will replicate the effects of the listed % format specifiers
     _print_octal    Prints and octal number o
     _print_hex_l    Prints the lower case hexidecimal number    x
     _print_hex_u    Prints the upper case hexidecimal number    X
+    
+    
+  # Examples:
+  # String (%s)
+	len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n")
+
+    return:
+    Let's try to printf a simple sentence.
+	Let's try to printf a simple sentence.
+
+# Integer (%d)
+	 _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+    
+    return:
+    Length:[39, 39]
+	Length:[39, 39]
+
+# Integer (%i or %d)
+	_printf("Negative:[%d]\n", -762534);
+    printf("Negative:[%d]\n", -762534);
+    _PRINTF Manpage (3) "12 July 2022" "Holberton School #C18 Laval.
+    
+    
+# Specifier	Input example	Output example
+    %c	"Printing a char: [%c]\n", 'X'	Printing a char: [X]
+    %s	"Printing a string: [%s]\n", "Hello, World"	Printing a string: [Hello, World]
+    %d or %i	"Printing a number: [%i]\n", 386	Printing a number: [386]
+    %%	"Printing a percent sign: [%%]\n", %	Printing a percent sign: [%]
+    
+   #   Install & Compile
+    $git clone https://github.com/crasride/holbertonschool-printf.git
+    $cd printf
+    
+   #    Sample of program:
+    int main(void)
+    {
+	    _printf("%s "Hello World");
+	    return (0);
+    }
+    ---------------------------------
+    $ gcc -Wall -Werror -Wextra -pedantic *.c -o hi
+    $ ./hi
+    Hello World
+    $
 
 #
 "SEE ALSO"
